@@ -1,4 +1,4 @@
-import test from "./state/state.ts";
+import test from "./state/state.ts"
 // if ("serviceWorker" in navigator) {
 //   navigator.serviceWorker
 //     .register("/sw.js")
@@ -9,7 +9,6 @@ import test from "./state/state.ts";
 //       console.log("service worker not registerd", err);
 //     });
 // }
-
 console.log({ test });
 console.log("hello world");
 console.log("hello world2");

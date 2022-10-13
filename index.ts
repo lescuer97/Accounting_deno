@@ -6,7 +6,7 @@ import {
 import { config } from "./deps.ts";
 const { PORT } = await config({ safe: true });
 
-console.log({ PORT });
+// console.log({ PORT });
 // Deno.read
 // const handler = async (request: Request): Response => {
 //   return serveFile(request, "./public/index.html");
@@ -16,6 +16,7 @@ console.log({ PORT });
 
 const controller = (req: Request) => {
   const pathname = new URL(req.url).pathname;
+
   setTimeout(() => {}, 800000);
   if (pathname == "/") {
     return serveFile(req, "public/index.html");
@@ -31,3 +32,5 @@ const controller = (req: Request) => {
 
 console.log(`HTTP webserver running. Access it at: http://0.0.0.0:${PORT}/`);
 await serve(controller, { port: Number(PORT), hostname: "0.0.0.0" });
+// deno run  --allow-env --allow-net --allow-read=/public,.env,.env.defaults,.env.example index.ts
+
